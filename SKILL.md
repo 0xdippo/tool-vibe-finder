@@ -5,9 +5,10 @@ description: Local-first taste assistant starter tool with a web chat UI for sho
 
 # Vibe Finder
 
-This skill starter runs as a local Node app with:
+This starter runs as an OpenClaw plugin tool with a companion local Node app:
 
-- a chat UI on `http://localhost:3434`
+- a chat UI on `http://127.0.0.1:3434`
+- an OpenClaw plugin at `.openclaw/extensions/vibe-finder`
 - one-question-at-a-time setup wizard
 - persistent memory in `data/vibe-profile.json`
 - optional TMDB and Watchmode providers

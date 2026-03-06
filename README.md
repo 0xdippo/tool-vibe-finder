@@ -1,6 +1,6 @@
 # Vibe Finder
 
-Vibe Finder is a local-first starter tool with a web chat UI for:
+Vibe Finder is an OpenClaw plugin tool with a companion local web UI for:
 
 - discovering shows
 - finding recipes
@@ -11,6 +11,7 @@ It runs in one local Node process, stores preference memory in JSON files, and s
 ## What it includes
 
 - messaging-style local web UI
+- OpenClaw plugin tools for chat, status, setup UI, and profile reset
 - one-question-at-a-time setup wizard
 - persistent taste memory in `data/vibe-profile.json`
 - optional TMDB and Watchmode integration
@@ -18,7 +19,30 @@ It runs in one local Node process, stores preference memory in JSON files, and s
 - story generation through an OpenAI-compatible or Ollama-style model config, with a local story fallback if no LLM is available
 - redacted JSONL logs for recommendations, feedback, and stories
 
-## Quick start
+## OpenClaw plugin install
+
+This repo ships an OpenClaw plugin at `.openclaw/extensions/vibe-finder` and also advertises it through `package.json`.
+
+If you want to install it into OpenClaw from the repo root:
+
+```bash
+openclaw plugins install -l /Users/dippo/Documents/GitHub/agents/repos/tool-vibe-finder
+```
+
+If you use this repo directly as an OpenClaw workspace, the workspace extension should also be discoverable from:
+
+```text
+.openclaw/extensions/vibe-finder/index.ts
+```
+
+The plugin exposes these tools:
+
+- `vibe_finder_chat`
+- `vibe_finder_status`
+- `vibe_finder_open_setup_ui`
+- `vibe_finder_reset_profile`
+
+## Local dev
 
 1. Install dependencies:
 
@@ -32,9 +56,11 @@ It runs in one local Node process, stores preference memory in JSON files, and s
    npm run dev
    ```
 
-3. Open [http://localhost:3434](http://localhost:3434)
+3. Open [http://127.0.0.1:3434](http://127.0.0.1:3434)
 
 4. Run the setup wizard. You can skip any provider step.
+
+From OpenClaw, you can also have the agent call `vibe_finder_open_setup_ui` to start the same companion UI and return the local URL.
 
 ## Optional provider setup
 
@@ -84,8 +110,9 @@ If no compatible LLM is configured, story mode still works with a clearly labele
 
 ```text
 vibe-finder/
-  skill.json
+  app.json
   README.md
+  .openclaw/extensions/vibe-finder/
   src/
     index.ts
     router.ts
@@ -117,6 +144,7 @@ These files are created locally on first run and are gitignored:
 - `npm run build`: compile TypeScript to `dist/`
 - `npm run check`: run a TypeScript-only check
 - `npm run start`: run the compiled server
+- `npm run check:plugin`: type-check the OpenClaw plugin entrypoint
 
 ## Notes
 

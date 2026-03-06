@@ -4,10 +4,16 @@
   "private": true,
   "type": "module",
   "description": "Local-first taste assistant starter tool for shows, recipes, and stories.",
+  "openclaw": {
+    "extensions": [
+      "./.openclaw/extensions/vibe-finder/index.ts"
+    ]
+  },
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc -p tsconfig.json",
     "check": "tsc --noEmit -p tsconfig.json",
+    "check:plugin": "tsc -p tsconfig.plugin.json",
     "start": "node dist/index.js"
   },
   "dependencies": {

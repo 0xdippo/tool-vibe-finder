@@ -1,5 +1,5 @@
 import { readJsonFile } from "./files.js";
-import { SKILL_CONFIG_PATH } from "./paths.js";
+import { APP_CONFIG_PATH } from "./paths.js";
 import type { AppConfig } from "../types.js";
 
 const defaultConfig: AppConfig = {
@@ -26,5 +26,5 @@ const defaultConfig: AppConfig = {
 };
 
 export async function loadAppConfig(): Promise<AppConfig> {
-  return readJsonFile<AppConfig>(SKILL_CONFIG_PATH, defaultConfig);
+  return readJsonFile<AppConfig>(APP_CONFIG_PATH, defaultConfig);
 }

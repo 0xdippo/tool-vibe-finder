@@ -1,0 +1,9 @@
+{
+  "id": "vibe-finder",
+  "name": "Vibe Finder",
+  "version": "0.1.0",
+  "description": "Local-first taste assistant tools for shows, recipes, and stories, with a companion setup web UI.",
+  "skills": [
+    "./skills/vibe-finder"
+  ]
+}

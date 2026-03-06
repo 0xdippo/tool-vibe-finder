@@ -2,7 +2,7 @@
   "$schema": "./config/config.schema.json",
   "name": "vibe-finder",
   "displayName": "Vibe Finder",
-  "description": "Local-first taste assistant with a web chat UI for shows, recipes, and stories.",
+  "description": "OpenClaw plugin tool with a companion local web UI for shows, recipes, and stories.",
   "version": "0.1.0",
   "port": 3434,
   "ui": {
