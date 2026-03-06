@@ -1,0 +1,6 @@
+node_modules
+dist
+.DS_Store
+data/provider-secrets.json
+data/*.jsonl
+data/vibe-profile.json

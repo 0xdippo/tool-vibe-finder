@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vibe Finder Skill Config",
+  "type": "object",
+  "required": ["name", "displayName", "description", "version", "port", "ui", "storage", "features", "providers"],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "port": {
+      "type": "integer",
+      "minimum": 1024,
+      "maximum": 65535
+    },
+    "ui": {
+      "type": "object",
+      "required": ["path", "entry"],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "entry": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "storage": {
+      "type": "object",
+      "required": ["profile", "recommendations", "stories", "feedback"],
+      "properties": {
+        "profile": {
+          "type": "string"
+        },
+        "recommendations": {
+          "type": "string"
+        },
+        "stories": {
+          "type": "string"
+        },
+        "feedback": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "enum": ["shows", "recipes", "stories"]
+      }
+    },
+    "providers": {
+      "type": "object",
+      "required": ["shows", "recipes"],
+      "properties": {
+        "shows": {
+          "type": "array",
+          "items": {
+            "enum": ["tmdb", "watchmode", "webFallback"]
+          }
+        },
+        "recipes": {
+          "type": "array",
+          "items": {
+            "enum": ["webSearch"]
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

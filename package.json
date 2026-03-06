@@ -1,0 +1,22 @@
+{
+  "name": "vibe-finder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first taste assistant starter tool for shows, recipes, and stories.",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc --noEmit -p tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

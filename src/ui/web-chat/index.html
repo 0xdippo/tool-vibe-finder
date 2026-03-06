@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vibe Finder</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Local-first taste assistant</p>
+          <h1>Vibe Finder</h1>
+        </div>
+        <div class="topbar-actions">
+          <div id="statusChips" class="status-cluster"></div>
+          <button id="resetButton" class="ghost-button" type="button">Reset vibe</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="side-column">
+          <section id="wizardPanel" class="panel wizard-panel"></section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Demo prompts</h2>
+              <p>Use one of these on first run.</p>
+            </div>
+            <div id="examplePrompts" class="prompt-grid"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h2>About / Credits</h2>
+              <p id="aboutBody"></p>
+            </div>
+            <p id="tmdbAttribution" class="small-print"></p>
+            <div id="profileSummary" class="memory-list"></div>
+          </section>
+        </aside>
+
+        <section class="chat-panel">
+          <div id="messages" class="messages"></div>
+
+          <div id="emptyState" class="empty-state">
+            <p class="eyebrow">Starter flow</p>
+            <h2>Tell it what you like, or ask for something right away.</h2>
+            <p>Preferences are stored locally in `data/vibe-profile.json` and used to shape the next response.</p>
+            <div id="emptyPromptGrid" class="prompt-grid"></div>
+          </div>
+
+          <form id="chatForm" class="composer">
+            <label class="sr-only" for="chatInput">Message</label>
+            <textarea
+              id="chatInput"
+              rows="3"
+              placeholder="Find me a show tonight. Or: No mushrooms ever."
+            ></textarea>
+            <button id="sendButton" type="submit">Send</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
